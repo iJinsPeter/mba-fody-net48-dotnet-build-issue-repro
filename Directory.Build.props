@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <!-- Package versions under test. Override from the command line, e.g. -p:MethodBoundaryAspectFodyVersion=x.y.z -->
+    <FodyVersion>6.9.3</FodyVersion>
+    <MethodBoundaryAspectFodyVersion>2.0.150</MethodBoundaryAspectFodyVersion>
+
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fody" Version="$(FodyVersion)" PrivateAssets="all" />
+    <PackageReference Include="MethodBoundaryAspect.Fody" Version="$(MethodBoundaryAspectFodyVersion)" />
+  </ItemGroup>
+</Project>
