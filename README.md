@@ -106,6 +106,11 @@ the name no matter which version is recorded. So the wrong reference goes unnoti
 as the same assembly runs on .NET Framework. That's why `Repro.Library` works in the net8.0 app and fails in the
 net48 app, even though it's the same file.
 
+On .NET the wrong reference can still cause trouble. For example,
+[vescon/MethodBoundaryAspect.Fody#113](https://github.com/vescon/MethodBoundaryAspect.Fody/issues/113) reports a
+`net6.0` app built with the .NET 7 SDK that references `System.Private.CoreLib, Version=7.0.0.0`, which breaks
+debugger evaluation. It has the same root cause.
+
 ## Workarounds
 
 - Build .NET Framework projects that use MethodBoundaryAspect.Fody with `MSBuild.exe` instead of `dotnet build`.
